@@ -32,45 +32,54 @@ This means that while traditionally you might have had a file structure similar 
 project
   |_images
   |_javascripts
-    |_app1
-      |_directive1
-        |_directive_1.js
-      |_directive2
-        |_directive_2.js
-
-    |_app2
-    |_ directive3
-      |_directive_3.js
-
-    |_app1_main.js
-    |_app2_main.js
-
+  |  |_app1
+  |  |  |_directive1
+  |  |  |  |_directive_1.js
+  |  |  |  |
+  |  |  |
+  |  |  |_directive2
+  |  |  |  |_directive_2.js
+  |  |  |  |
+  |  |
+  |  |_app2
+  |  |  |_directive3
+  |  |  |  |_directive_3.js
+  |  |  |  |
+  |  |
+  |  |_app1_main.js
+  |  |_app2_main.js
+  |  |
+  |
   |_stylesheets
-    |_app1
-      |_app1_directive_1.css
-      |_app1_directive_2.css
-
-    |_app2
-      |_app2_directive_3.css
-
-    |_app1_main.scss
-    |_app2_main.scss
-
+  |  |_app1
+  |  |  |_app1_directive_1.css
+  |  |  |_app1_directive_2.css
+  |  |  |
+  |  |
+  |  |_app2
+  |  |  |_app2_directive_3.css
+  |  |  |
+  |  |
+  |  |_app1_main.scss
+  |  |_app2_main.scss
+  |  |
+  |
   |_templates
-    |_app1
-      |_app1_index.html
-      |_directive1
-        |_directive_1.html
-
-      |_directive2
-        |_directive_2.html
-
-    |_app2
-      |_app2_index.html
-      |_ directive3
-        |_directive_3.html
-
-
+  |  |_app1
+  |  |  |_app1_index.html
+  |  |  |_directive1
+  |  |  |  |_directive_1.html
+  |  |  |  |
+  |  |  |
+  |  |  |_directive2
+  |  |  |  |_directive_2.html
+  |  |  |  |
+  |  |
+  |  |_app2
+  |  |  |_app2_index.html
+  |  |  |_ directive3
+  |  |  |  |_directive_3.html
+  |  |  |  |
 ```
 
 Now you can have something like:
@@ -79,28 +88,30 @@ Now you can have something like:
 ```
 project
   |_app1
-    |_app1_main.js
-    |_app1_index.html
-    |_app1_main.scss
-    |_directive1
-      |_directive_1.js
-      |_app1_directive_1.css
-      |_directive_1.html
-
-    |_directive2
-      |_directive_2.js
-      |_app1_directive_2.css
-      |_directive_2.html
-
+  |  |_app1_main.js
+  |  |_app1_index.html
+  |  |_app1_main.scss
+  |  |_directive1
+  |  |  |_directive_1.js
+  |  |  |_app1_directive_1.css
+  |  |  |_directive_1.html
+  |  |  |
+  |  |
+  |  |_directive2
+  |  |  |_directive_2.js
+  |  |  |_app1_directive_2.css
+  |  |  |_directive_2.html
+  |  |  |
+  |
   |_app2
-    |_app2_main.js
-    |_app2_index.html
-    |_app2_main.scss
-    |_directive3
-      |_directive_3.js
-      |_app2_directive_3.css
-      |_directive_3.html
-
+  |  |_app2_main.js
+  |  |_app2_index.html
+  |  |_app2_main.scss
+  |  |_directive3
+  |  |  |_directive_3.js
+  |  |  |_app2_directive_3.css
+  |  |  |_directive_3.html
+  |  |  |
 ```
 
 Notice the difference? If it's easier, you can think af the `app` folders as `features`, and the `directive` folders as `components`.
@@ -132,14 +143,13 @@ However sometimes it is not really needed.
 ```
   |_main.js
   |_folder
-    |_file.js
-    |_index.js
-
+  |  |_file.js
+  |  |_index.js
+  |  |
 ```
 
 ```javascript
 // folder/index.js
-
 require('file.js');
 ```
 
@@ -153,8 +163,8 @@ require('folder');
 ```
   |_main.js
   |_folder
-    |_file.js
-
+  |  |_file.js
+  |  |
 ```
 
 ```javascript
@@ -169,11 +179,11 @@ require('folder/file');
 
 ```
   |_main.js
-    |_folder
-      |_file.js
-      |_file2.js
-      |_file3.js
-
+  |  |_folder
+  |  |  |_file.js
+  |  |  |_file2.js
+  |  |  |_file3.js
+  |  |  |
 ```
 
 ```javascript
@@ -187,12 +197,12 @@ require('folder/file3');
 
 ```
   |_main.js
-    |_folder
-      |_file.js
-      |_file2.js
-      |_file3.js
-      |_index.js
-
+  |  |_folder
+  |  |  |_file.js
+  |  |  |_file2.js
+  |  |  |_file3.js
+  |  |  |_index.js
+  |  |  |
 ```
 
 ```javascript
@@ -214,13 +224,14 @@ require('folder');
 
 ```
   |_main.js
-    |_folder
-      |_file.js
-      |_file2.js
-      |_nested_folder
-        |_file3.js
-        |_file4.js
-        |_file5.js
+  |  |_folder
+  |  |  |_file.js
+  |  |  |_file2.js
+  |  |  |_nested_folder
+  |  |  |  |_file3.js
+  |  |  |  |_file4.js
+  |  |  |  |_file5.js
+  |  |  |  |
 ```
 
 ```javascript
@@ -235,22 +246,23 @@ require('folder/nested_folder/file4');
 If you need to use file and file4 in main, move it out of the nested folder and place it directly on the feature level
 
 ```
-|_main.js
-  |_folder
-    |_file2.js
-    |_index.js
-    |_nested_folder
-      |_file3.js
-      |_file5.js
-      |_index.js
-
-  |_file.js
-  |_file4.js
+  |_main.js
+  |  |_folder
+  |  |  |_file2.js
+  |  |  |_index.js
+  |  |  |_nested_folder
+  |  |  |  |_file3.js
+  |  |  |  |_file5.js
+  |  |  |  |_index.js
+  |  |  |  |
+  |  |
+  |  |_file.js
+  |  |_file4.js
+  |  |
 ```
 
 ```javascript
 // folder/nested_folder/index.js
-
 require('file3.js');
 require('file5.js');
 
@@ -281,34 +293,37 @@ It is OK to separate files by types and functions, as long as they are in their 
 
 ```
   |_feature
-    |_javascripts
-      |_component1.js
-      |_component2.js
-
-    |_stylesheets
-      |_component1.css
-      |_component2.css
-
-    |_templates
-      |_component1.html
-      |_component2.html
-
+  |  |_javascripts
+  |  |  |_component1.js
+  |  |  |_component2.js
+  |  |  |
+  |  |
+  |  |_stylesheets
+  |  |  |_component1.css
+  |  |  |_component2.css
+  |  |  |
+  |  |
+  |  |_templates
+  |  |  |_component1.html
+  |  |  |_component2.html
+  |  |  |
 ```
 
 **Good**
 
 ```
   |_feature
-    |_component1
-      |_component1.js
-      |_component1.css
-      |_component1.html
-
-    |_component2
-      |_component2.js
-      |_component2.css
-      |_component2.html
-
+  |  |_component1
+  |  |  |_component1.js
+  |  |  |_component1.css
+  |  |  |_component1.html
+  |  |  |
+  |  |
+  |  |_component2
+  |  |  |_component2.js
+  |  |  |_component2.css
+  |  |  |_component2.html
+  |  |  |
 ```
 
 
@@ -317,24 +332,25 @@ It is OK to separate files by types and functions, as long as they are in their 
 
 ```
   |_feature
-    |_main.js
-    |_index.html
-    |_partial_for_index.html
-    |_partial_for_index2.html
-    |_partial_for_index3.html
-
+  |  |_main.js
+  |  |_index.html
+  |  |_partial_for_index.html
+  |  |_partial_for_index2.html
+  |  |_partial_for_index3.html
+  |  |
 ```
 
 **Good**
 
 ```
   |_feature
-    |_main.js
-    |_templates
-    |_index.html
-        |_partial_for_index.html
-        |_partial_for_index2.html
-        |_partial_for_index3.html
+  |  |_main.js
+  |  |_templates
+  |  |  |_index.html
+  |  |  |_partial_for_index.html
+  |  |  |_partial_for_index2.html
+  |  |  |_partial_for_index3.html
+  |  |  |
 ```
 
 Note: this only makes sense if the templates are connected.
@@ -348,11 +364,11 @@ It is OK to have a single file in a folder with a set functionality:
 
 ```
   |_feature
-    |_main.js
-    |_service1.js
-    |_model1.js
-    |_filter1.js
-
+  |  |_main.js
+  |  |_service1.js
+  |  |_model1.js
+  |  |_filter1.js
+  |  |
 ```
 
 **Good**
@@ -360,16 +376,18 @@ It is OK to have a single file in a folder with a set functionality:
 
 ```
   |_feature
-    |_main.js
-    |_services
-      |_service1.js
-
-    |_models
-      |_model1.js
-
-    |_filters
-      |_filter1.js
-
+  |  |_main.js
+  |  |_services
+  |  |  |_service1.js
+  |  |  |
+  |  |
+  |  |_models
+  |  |  |_model1.js
+  |  |  |
+  |  |
+  |  |_filters
+  |  |  |_filter1.js
+  |  |  |
 ```
 
 If you have more than one of the same functionality type, it is better to always apply tho above:
@@ -378,13 +396,13 @@ If you have more than one of the same functionality type, it is better to always
 
 ```
   |_feature
-    |_main.js
-    |_service1.js
-    |_service2.js
-    |_model1.js
-    |_model2.js
-    |_model3.js
-
+  |  |_main.js
+  |  |_service1.js
+  |  |_service2.js
+  |  |_model1.js
+  |  |_model2.js
+  |  |_model3.js
+  |  |
 ```
 
 **Good**
@@ -392,15 +410,17 @@ If you have more than one of the same functionality type, it is better to always
 
 ```
   |_feature
-    |_main.js
-    |_services
-      |_service1.js
-      |_service2.js
-
-    |_models
-      |_model1.js
-      |_model2.js
-      |_model3.js
+  |  |_main.js
+  |  |_services
+  |  |  |_service1.js
+  |  |  |_service2.js
+  |  |  |
+  |  |
+  |  |_models
+  |  |  |_model1.js
+  |  |  |_model2.js
+  |  |  |_model3.js
+  |  |  |
 ```
 
 Note, the example above only makes sense if the services are related to the main feature and not to any of its components.
@@ -410,13 +430,15 @@ Follow the example bellow, if you have multiple services, which are relevant to 
 
 ```
   |_feature
-    |_main.js
-    |_component1
-      |_component1.js
-
-    |_services
-      |_service_only_used_in_main.js
-      |_service_only_used_in_component1.js
+  |  |_main.js
+  |  |_component1
+  |  |  |_component1.js
+  |  |  |
+  |  |
+  |  |_services
+  |  |  |_service_only_used_in_main.js
+  |  |  |_service_only_used_in_component1.js
+  |  |  |
 ```
 
 **Good**
@@ -424,14 +446,16 @@ Follow the example bellow, if you have multiple services, which are relevant to 
 
 ```
   |_feature
-    |_main.js
-    |_component1
-      |_component1.js
-      |_services
-        |_service_only_used_in_component1.js
-
-    |_services
-      |_service_only_used_in_main.js
+  |  |_main.js
+  |  |_component1
+  |  |  |_component1.js
+  |  |  |_services
+  |  |  |  |_service_only_used_in_component1.js
+  |  |  |  |
+  |  |
+  |  |_services
+  |  |  |_service_only_used_in_main.js
+  |  |  |
 ```
 
 Note: as soon as you want to use the service in the component into your feature, **move it out to the feature level**!
@@ -445,6 +469,65 @@ All feedback and contributions will be very welcome.
 
 In order to make all examples look and feel consistent, please follow the guidelines bellow.
 
+Use pipes and 2 spaces to illustrate directory structure and nesting
+
+
+**Bad**
+```
+  |_folder
+    |_file
+
+```
+
+**Good**
+```
+   |_folder
+   |  |_file
+   |  |
+```
+
+Close leaves with a an extra line with a pipe
+
+**Bad**
+
+```
+  |_folder
+  |  |_nested_folder
+```
+
+**Good**
+
+```
+  |_folder
+  |  |_nested_folder
+  |  |
+```
+
+Do not add a new line for multiple leaves closed at the same time
+
+
+**Bad**
+
+```
+  |_folder
+  |  |_nested_folder
+  |  |  |_leaf
+  |  |  |
+  |  |
+  |
+
+```
+
+**Good**
+
+```
+  |_folder
+  |  |_nested_folder
+  |  |  |_leaf
+  |  |  |
+```
+
+
 If an item in the folder structure is a level or more ahead of the item bellow it,
 separate them by a new line.
 
@@ -454,11 +537,11 @@ Examples:
 
 ```
   |_folder
-    |_item
-    |_nested_folder
-      |_item
-    |_nested_folder2
-      |_item
+  |  |_item
+  |  |_nested_folder
+  |  |  |_item
+  |  |_nested_folder2
+  |  |  |_item
 
 ```
 
@@ -466,13 +549,14 @@ Examples:
 
 ```
   |_folder
-    |_item
-    |_nested_folder
-      |_item
-
-    |_nested_folder2
-      |_item
-
+  |  |_item
+  |  |_nested_folder
+  |  | |_item
+  |  | |
+  |  |
+  |  |_nested_folder2
+  |  |  |_item
+  |  |  |
 ```
 
 Do not separate same level items with new lines
@@ -481,19 +565,20 @@ Do not separate same level items with new lines
 
 ```
   |_folder
-    |_item
-
-    |_item2
-
-    |_folder1
-
+  |  |_item
+  |  |
+  |  |_item2
+  |  |
+  |  |_folder1
+  |  |
 ```
 
 **Good**
 
 ```
   |_folder
-    |_item
-    |_item2
-    |_folder1
+  |  |_item
+  |  |_item2
+  |  |_folder1
+  |  |
 ```
