@@ -1,5 +1,4 @@
-## Folder Structure Best Practices for Webpack and AngularJS.
-
+## Folder Structure Guidelines for Webpack and AngularJS.
 
 ### Abstract
 
@@ -119,7 +118,7 @@ While in a small application this might not make too much of a difference,
 the more code you add, the more it will become apparent that you need a sustainable structure, more similar to the second one.
 
 
-### Best Practices
+### Guidelines
 
 In order to keep things consistent, you need to abide to a certain set of practices.
 The guidelines bellow attempt to address this.
