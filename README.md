@@ -31,54 +31,9 @@ This means that while traditionally you might have had a file structure similar 
 project
   |_images
   |_javascripts
-  |  |_app1
-  |  |  |_directive1
-  |  |  |  |_directive_1.js
-  |  |  |  |
-  |  |  |
-  |  |  |_directive2
-  |  |  |  |_directive_2.js
-  |  |  |  |
-  |  |
-  |  |_app2
-  |  |  |_directive3
-  |  |  |  |_directive_3.js
-  |  |  |  |
-  |  |
-  |  |_app1_main.js
-  |  |_app2_main.js
-  |  |
-  |
   |_stylesheets
-  |  |_app1
-  |  |  |_app1_directive_1.css
-  |  |  |_app1_directive_2.css
-  |  |  |
-  |  |
-  |  |_app2
-  |  |  |_app2_directive_3.css
-  |  |  |
-  |  |
-  |  |_app1_main.scss
-  |  |_app2_main.scss
-  |  |
-  |
   |_templates
-  |  |_app1
-  |  |  |_app1_index.html
-  |  |  |_directive1
-  |  |  |  |_directive_1.html
-  |  |  |  |
-  |  |  |
-  |  |  |_directive2
-  |  |  |  |_directive_2.html
-  |  |  |  |
-  |  |
-  |  |_app2
-  |  |  |_app2_index.html
-  |  |  |_ directive3
-  |  |  |  |_directive_3.html
-  |  |  |  |
+  |
 ```
 
 Now you can have something like:
@@ -86,37 +41,19 @@ Now you can have something like:
 
 ```
 project
-  |_app1
-  |  |_app1_main.js
-  |  |_app1_index.html
-  |  |_app1_main.scss
-  |  |_directive1
-  |  |  |_directive_1.js
-  |  |  |_app1_directive_1.css
-  |  |  |_directive_1.html
-  |  |  |
+  |_feature1
+  |  |_component1
+  |  |_component2
   |  |
-  |  |_directive2
-  |  |  |_directive_2.js
-  |  |  |_app1_directive_2.css
-  |  |  |_directive_2.html
-  |  |  |
   |
-  |_app2
-  |  |_app2_main.js
-  |  |_app2_index.html
-  |  |_app2_main.scss
-  |  |_directive3
-  |  |  |_directive_3.js
-  |  |  |_app2_directive_3.css
-  |  |  |_directive_3.html
-  |  |  |
+  |_feature2
+  |  |_component3
+  |  |_component4
+  |  |
 ```
 
-Notice the difference? If it's easier, you can think af the `app` folders as `features`, and the `directive` folders as `components`.
 While in a small application this might not make too much of a difference,
 the more code you add, the more it will become apparent that you need a sustainable structure, more similar to the second one.
-
 
 ### Guidelines
 
