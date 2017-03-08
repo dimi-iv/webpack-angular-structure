@@ -1,15 +1,35 @@
 ## Folder Structure Guidelines for Webpack and AngularJS.
 
+### Table of Contents
+
+1. [Abstract](#abstract)
+1. [Motivation](#motivation)
+1. [Webpack](#webpack)
+1. [Modular Organization](#organization)
+1. [Guidelines](#guidelines)
+  - [Index.js](#guideline_index)
+    * [single file in folder](#index_single_file)
+    * [multiple files in a folder](#index_multiple_file)
+    * [cross-referencing files](#index_cross_reference)
+  - [File Structure](#guideline_structure)
+    * [different asset types](#struct_diff_asset_types)
+    * [multiple files from the same type](#struct_multi_files_from_type)
+    * [different purpose assets with the same type - single](#struct_multi_purpose_assets_single)
+    * [different purpose assets with the same type - multiple](#struct_multi_purpose_assets_multi)
+    * [cross-referencing files](#struct_cross_reference)
+
+<a name="abstract"></a>
 ### Abstract
 
 Moving assets to the Node.js world from a pure Rails environment, has posed certain questions.
 Hopefully the suggested answers to those questions will help others in their explorations of the Node.js world.
 
+<a name="motivation"></a>
 ### Motivation
 
 The practices bellow attempt to organize your code into a more decoupled and a more maintainable way.
 
-
+<a name="webpack"></a>
 ### Webpack
 
 Webpack is described as a module builder. It takes in all your assets and their dependencies, modifies them to your liking
@@ -19,7 +39,7 @@ Webpack can handle all types of assets using the concept of loaders.
 The Webpack loaders know how to transform some of your more complex asset types, like sass or coffeescript, into
 more basic types, like css and javascript, which are understood by your browser.
 
-
+<a name="organization"></a>
 ### Modular Organization
 
 Because Webpack knows how to handle different types of assets, this allows us the flexibility to organize our assets
@@ -55,6 +75,7 @@ project
 While in a small application this might not make too much of a difference,
 the more code you add, the more it will become apparent that you need a sustainable structure, more similar to the second one.
 
+<a name="guidelines"></a>
 ### Guidelines
 
 In order to keep things consistent, you need to abide to a certain set of practices.
@@ -62,7 +83,7 @@ The guidelines bellow attempt to address this.
 
 Disclaimer: The guidelines bellow use the terms **Bad** and **Good** as suggestions only, based on personal preference.
 
-
+<a name="guideline_index"></a>
 #### Index.js Files
 
 Node.js looks for index.js when you use the `require()` method.
@@ -72,6 +93,7 @@ The `index.js` file is a very powerful tool for loading folders and defining loa
 
 However sometimes it is not really needed.
 
+<a name="index_single_file"></a>
 ##### Single file in a folder
 
 **Bad**
@@ -107,7 +129,7 @@ require('folder');
 // main.js
 require('folder/file');
 ```
-
+<a name="index_multiple_file"></a>
 ##### Multiple files in a folder
 
 **Bad**
@@ -153,7 +175,7 @@ require('./file3');
 
 require('folder');
 ```
-
+<a name="index_cross_reference"></a>
 ##### Cross-referencing files in folders
 
 **Bad**
@@ -217,11 +239,12 @@ require('./file');
 require('./file4');
 require('folder');
 ```
-
-#### Component file structure
+<a name="guideline_structure"></a>
+#### File structure
 
 It is OK to separate files by types and functions, as long as they are in their own business logic and functionality.
 
+<a name="struct_diff_asset_types"></a>
 ##### Different asset types
 
 **Bad**
@@ -262,6 +285,8 @@ It is OK to separate files by types and functions, as long as they are in their 
   |  |  |
 ```
 
+<a name="struct_multi_files_from_type"></a>
+#### Multiple files from the same type
 
 **Bad**
 
@@ -292,7 +317,8 @@ It is OK to separate files by types and functions, as long as they are in their 
 Note: this only makes sense if the templates are connected.
 If they are not connected, try to separate them logically into bundles, like the example above.
 
-##### Different purpose assets
+<a name="struct_multi_purpose_assets_single"></a>
+##### Different purpose assets of the same type - single file
 
 It is OK to have a single file in a folder with a set functionality:
 
@@ -326,7 +352,10 @@ It is OK to have a single file in a folder with a set functionality:
   |  |  |
 ```
 
-If you have more than one of the same functionality type, it is better to always apply tho above:
+<a name="struct_multi_purpose_assets_multi"></a>
+##### Different purpose assets of the same type - multiple files
+
+If you have more than one of the same functionality type:
 
 **Bad**
 
@@ -362,6 +391,9 @@ If you have more than one of the same functionality type, it is better to always
 Note, the example above only makes sense if the services are related to the main feature and not to any of its components.
 Follow the example bellow, if you have multiple services, which are relevant to different components.
 
+<a name="struct_cross_reference"></a>
+#### Cross-referencing files
+
 **Bad**
 
 ```
@@ -394,6 +426,6 @@ Follow the example bellow, if you have multiple services, which are relevant to 
   |  |  |
 ```
 
-Note: as soon as you want to use the service in the component into your feature, **move it out to the feature level**!
-**Never** call a service from your component level, directly into your feature
-(refer to the cross-referencing example in the `index.js` section).
+Note: as soon as you want to use the service in the component into your feature, it is recommended to **move it out to the feature level**
+Avoid calling assets from your component level, directly into your feature
+(refer to the [cross-referencing example](#index_cross_reference) in the `index.js` section).
