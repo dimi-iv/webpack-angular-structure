@@ -79,9 +79,9 @@ the more code you add, the more it will become apparent that you need a sustaina
 ### Guidelines
 
 In order to keep things consistent, you need to abide to a certain set of practices.
-The guidelines bellow attempt to address this.
+The guidelines below attempt to address this.
 
-Disclaimer: The guidelines bellow use the terms **Bad** and **Good** as suggestions only, based on personal preference.
+Disclaimer: The guidelines below use the terms **Bad** and **Good** as suggestions only, based on personal preference.
 
 <a name="guideline_index"></a>
 #### Index.js Files
